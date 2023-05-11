@@ -1,10 +1,6 @@
-# Awesome Books Project
-<a name="readme-top"></a>
+<center><h1><font color="teal">Awesome Books Project</font></h1> </center>
 
-<div align="center">
-  <br/>
-  <h3><b> Awesome Books Project</b></h3>
-</div>
+<a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
 

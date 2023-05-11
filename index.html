@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="./modules/book.js"></script>
+    <script type="module" src="./modules/bookManager.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script src="mobile.js"></script>
+
+</head>
+<body>
+  <nav class="desktop-nav">
+    <h1>Awesome Books</h1>
+    <ul>
+      <li><a href="#books-list">Books List</a></li>
+      <li><a href="#add-book-form">Add New</a></li>
+      <li><a href="#contact-info">Contact Info</a></li>
+    </ul>
+  </nav>
+  <nav class="mobile-nav">
+    <h1>Awesome Books</h1>
+    <svg viewBox="0 0 100 80" width="40" height="40" class="svg-menu" id="svg-menu">
+      <rect y="38" width="100" height="8" rx="8" fill="#008080"></rect>
+      <rect y="58" width="100" height="8" rx="8" fill="#008080"></rect>
+      <rect y="78" width="100" height="8" rx="8" fill="#008080"></rect>
+    </svg>
+    <nav id="mobile-nav-menu" class="mobile-menu-inactive">
+      <div class="disabled-button"><a href="#"><img src="./images/hamburger disable.png"></a></div>
+      <ul class="mobile-menu-list">
+        <li><a href="#books-list" class="mobile-link">Books List</a></li>
+        <li><a href="#add-book-form" class="mobile-link">Add New</a></li>
+        <li><a href="#contact-info" class="mobile-link">Contact Info</a></li>
+      </ul>
+    </nav>
+  </nav>
+  <div id="time"></div>
+  <main>
+    <section id="books-list" class="content-section">
+      <h2 class="title-text">All Awesome Books</h2>
+      <table id="book-table">
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+    <section id="add-book-form" class="content-section hidden">
+      <h2 id="inpt-text">Add a New Book</h2>
+      <form id="book-form">
+        <label for="title-input"></label>
+        <input type="text" id="title-input" placeholder="Title" required>
+        <br>
+        <label for="author-input"></label>
+        <input type="text" id="author-input" placeholder="Author" required>
+        <br>
+        <button type="submit" id="add-button">Add Book</button>
+      </form>
+    </section>
+    <section id="contact-info" class="content-section">
+      <h2>Contact Information</h2>
+      <p>For more information, please contact us at:</p>
+      <ul>
+        <li>Email: info@awesomebooks.com</li>
+        <li>Phone: +254700000000</li>
+        <li>Address: 123 Wood Lane Ave, Nairobi Kenya</li>
+      </ul>
+    </section>
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 Awesome Books. All Rights Reserved.</p>
+      </div>
+    </footer>    
+  </main>
+</body>
+</html>
