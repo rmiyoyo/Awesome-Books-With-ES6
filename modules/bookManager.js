@@ -1,6 +1,6 @@
-import Book from './book.js';
+import { Book } from './book.js';
 
-const bookManager = {
+export const bookManager = {
   books: [],
   tableBody: document.querySelector('#book-table tbody'),
   form: document.querySelector('#add-book-form'),
@@ -8,6 +8,12 @@ const bookManager = {
     this.form.addEventListener('submit', (event) => {
       event.preventDefault();
       this.addBook();
+    });
+    this.tableBody.addEventListener('click', (event) => {
+      if (event.target.classList.contains('remove-button')) {
+        const id = event.target.getAttribute('data-id');
+        this.removeBook(id);
+      }
     });
     window.addEventListener('load', () => {
       if (localStorage.getItem('books')) {
@@ -34,6 +40,7 @@ const bookManager = {
   removeBook(id) {
     this.books = this.books.filter((book) => book.id !== id);
     this.displayBooks();
+    localStorage.setItem('books', JSON.stringify(this.books));
   },
   displayBooks() {
     this.tableBody.innerHTML = '';
@@ -44,9 +51,11 @@ const bookManager = {
       removeCell.classList.add('align-rm-btn');
       const bookTitle = `${book.title} by ${book.author}`;
       titleCell.innerText = bookTitle;
-      removeCell.innerHTML = `<button onclick="bookManager.removeBook('${book.id}')">Remove</button>`;
+      const removeButton = document.createElement('button');
+      removeButton.classList.add('remove-button');
+      removeButton.setAttribute('data-id', book.id);
+      removeButton.innerText = 'Remove';
+      removeCell.appendChild(removeButton);
     });
   },
 };
-
-export default bookManager;
